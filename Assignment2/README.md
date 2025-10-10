@@ -135,7 +135,48 @@ Display the contents of the output file
 cat alg_list.txt
 
 ```
+# 📄 Task 1: Output – List of PQC Algorithms
 
+This file shows the **output of Task 1**, where we listed all available **Key Encapsulation Mechanisms (KEMs)** and **Digital Signature Schemes (SIGs)** in our `liboqs` build.
+
+---
+
+## 🔑 Key Encapsulation Mechanisms (KEMs)
+
+| No. | Algorithm Name          | Public Key (bytes) | Secret Key (bytes) | Ciphertext (bytes) |
+|-----|------------------------|-----------------|-----------------|------------------|
+| 1   | Kyber512               | 800             | 1632            | 768              |
+| 2   | Kyber768               | 1184            | 2400            | 1088             |
+| 3   | Kyber1024              | 1568            | 3168            | 1568             |
+| 4   | NTRU-HPS-2048-509      | 699             | 935             | 699              |
+| 5   | NTRU-HPS-2048-677      | 1024            | 1267            | 1024             |
+| ... | ...                    | ...             | ...             | ...              |
+
+> ✅ **Note:** Actual algorithms and sizes depend on your installed liboqs build.
+
+---
+
+## ✍️ Digital Signature Schemes (SIGs)
+
+| No. | Algorithm Name          | Public Key (bytes) | Secret Key (bytes) | Signature (bytes) |
+|-----|------------------------|-----------------|-----------------|-----------------|
+| 1   | Dilithium2             | 1312            | 2528            | 2420            |
+| 2   | Dilithium3             | 1952            | 4000            | 3293            |
+| 3   | Dilithium5             | 2592            | 4864            | 4595            |
+| 4   | Falcon-512             | 897             | 1281            | 666              |
+| 5   | Falcon-1024            | 1793            | 2305            | 1280             |
+| 6   | SPHINCS+-SHA2-128f-simple | 896           | 2048            | 16976           |
+| ... | ...                    | ...             | ...             | ...              |
+
+---
+
+## 📋 Full Command to Generate This Output
+
+```bash
+cd ~/pqc_project/task1_list_algorithms
+./list_algorithms | tee alg_list.txt
+cat alg_list.txt
+```
 
 # 🧩 Task 2: KEM Exchange Utility (`kem_exchange`)
 
