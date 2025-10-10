@@ -127,3 +127,141 @@ The `kem_exchange` utility serves as a **comprehensive benchmarking and validati
 
 
 
+# 📝 **Task 3: Digital Signature Demo (`sig_demo`)**
+
+`sig_demo.c` demonstrates **Digital Signatures** using **Post-Quantum Cryptography (PQC)** and **classical cryptography** (RSA-2048 and ECDSA-P256).
+It highlights **key generation, signing, verification**, **key & signature sizes**, and **execution timings**.
+
+---
+
+## 🚀 Features
+
+| Type           | Algorithms                        | Features                                                                                      |
+| -------------- | --------------------------------- | --------------------------------------------------------------------------------------------- |
+| **PQC**        | Dilithium2/3/5, ML-DSA (fallback) | Key generation, signing, verification, Hexadecimal signature output, Timing measurements (ms) |
+| **Classical**  | RSA-2048                          | SHA-256 signing, Key & signature sizes, Verification                                          |
+| **Classical**  | ECDSA-P256                        | SHA-256 signing, Compact key (~65 bytes), Signature size ~64–72 bytes, Verification           |
+| **Comparison** | All                               | Performance comparison between PQC and classical signatures                                   |
+
+---
+
+## 📝 Table of Contents
+
+* [Overview](#overview)
+* [Dependencies](#dependencies)
+* [Installation](#installation)
+* [Compilation](#compilation)
+* [Usage](#usage)
+* [Algorithm Details](#algorithm-details)
+* [Sample Output](#sample-output)
+* [Contributing](#contributing)
+* [License](#license)
+
+---
+
+## 🔍 Overview
+
+This project demonstrates digital signatures by:
+
+1. Generating **public/private key pairs** for PQC and classical algorithms
+2. Signing a sample message:
+
+```
+"Post-Quantum Cryptography is the future"
+```
+
+3. Verifying the signature
+4. Measuring execution time for **key generation**, **signing**, and **verification**
+5. Printing **key sizes** and **signature lengths**
+
+---
+
+## 🧩 Dependencies
+
+| Dependency                   | Purpose                  |
+| ---------------------------- | ------------------------ |
+| GCC                          | Compiler                 |
+| OpenSSL (`libssl-dev`)       | RSA, ECDSA, SHA-256      |
+| Open Quantum Safe (`liboqs`) | PQC signature algorithms |
+
+**Ubuntu/Debian Installation:**
+
+```bash
+sudo apt update
+sudo apt install build-essential libssl-dev cmake ninja-build git
+```
+
+**Build and Install liboqs:**
+
+```bash
+git clone --branch main https://github.com/open-quantum-safe/liboqs.git
+cd liboqs
+mkdir build && cd build
+cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr/local ..
+ninja
+sudo ninja install
+```
+
+---
+
+## ⚙️ Compilation
+
+```bash
+gcc -O2 -o sig_demo sig_demo.c -I/usr/local/include -L/usr/local/lib -loqs -lcrypto
+```
+
+---
+
+## 🏃 Usage
+
+```bash
+LD_LIBRARY_PATH=/usr/local/lib ./sig_demo
+```
+
+Program workflow:
+
+1. Select a PQC algorithm (**Dilithium2 preferred**)
+2. Generate **public/private keys**
+3. Sign and verify the sample message
+4. Print **signature in hexadecimal**
+5. Display **timings**, **key sizes**, and **verification results**
+
+---
+
+## 🔑 Algorithm Details
+
+| Algorithm            | Public Key Size | Secret Key Size | Signature Size | Notes                                                    |
+| -------------------- | --------------- | --------------- | -------------- | -------------------------------------------------------- |
+| **Dilithium2 (PQC)** | 1312 bytes      | 2528 bytes      | 2420 bytes     | OQS library, PQC security, measured timings in ms        |
+| **RSA-2048**         | ~294 bytes      | N/A             | 256 bytes      | Classical, SHA-256 signed, measured timings              |
+| **ECDSA-P256**       | ~65 bytes       | N/A             | 64–72 bytes    | Classical, compact key, SHA-256 signed, measured timings |
+
+---
+
+## 📊 Sample Output
+
+| Algorithm            | Verification | KeyGen (ms) | Sign (ms) | Verify (ms) | Signature (hex, truncated) |
+| -------------------- | ------------ | ----------- | --------- | ----------- | -------------------------- |
+| **Dilithium2 (PQC)** | ✅ SUCCESS    | 2.345       | 0.456     | 0.123       | `12ab34cd...`              |
+| **RSA-2048**         | ✅ SUCCESS    | 45.678      | 1.234     | 0.987       | `a1b2c3d4...`              |
+| **ECDSA-P256**       | ✅ SUCCESS    | 0.456       | 0.123     | 0.078       | `abcd1234...`              |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a branch: `git checkout -b feature-name`
+3. Commit changes: `git commit -am "Add feature"`
+4. Push branch: `git push origin feature-name`
+5. Open a Pull Request
+
+---
+
+
+
+
+
+
