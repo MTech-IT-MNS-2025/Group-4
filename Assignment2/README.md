@@ -183,23 +183,7 @@ Program workflow:
 
 ---
 
-## 🤝 Contributing
 
-Contributions are welcome!
-
-1. Fork the repository
-2. Create a branch: `git checkout -b feature-name`
-3. Commit changes: `git commit -am "Add feature"`
-4. Push branch: `git push origin feature-name`
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
-
----
 
 ✅ **Advantages of this version:**
 
@@ -210,6 +194,3 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 
 ---
 
-If you want, I can also **add a workflow diagram** for **KeyGen → Sign → Verify** in Markdown with arrows, which will make it **very visual and GitHub-friendly**.
-
-Do you want me to do that?
