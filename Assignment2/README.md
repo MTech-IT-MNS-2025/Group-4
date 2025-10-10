@@ -1,6 +1,20 @@
 
 # Assignment 2
 
+---
+
+## 👥 Member Contributions
+
+This section outlines the primary tasks and the team members responsible for their completion.
+
+| Task | Responsible Member |
+| :--- | :--- | 
+| **Task 1** | Abhishek Singh Dasila |
+| **Task 2** | Nilesh Kumar Nayak | 
+| **Task 3** | Prateek Choudhary | 
+| **Task 4** | Chetan Meshram | 
+
+---
 # 🧮 Task 1: Listing All Available Algorithms (liboqs)
 
 ## 🎯 Objective
