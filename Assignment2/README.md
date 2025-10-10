@@ -62,7 +62,7 @@ Absolutely! We can make your README **unique, professional, and visually appeali
 
 ---
 
-# 🛡️ Digital Signature Demo (`sig_demo`)
+**TASK-3** # 🛡️ Digital Signature Demo (`sig_demo`)
 
 `sig_demo.c` demonstrates **Digital Signatures** using **Post-Quantum Cryptography (PQC)** and **classical cryptography** (RSA-2048 and ECDSA-P256).
 It highlights **key generation, signing, verification**, **key & signature sizes**, and **execution timings**.
