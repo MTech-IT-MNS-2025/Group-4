@@ -54,3 +54,189 @@ The program (`list_algorithms.c`) lists:
 
 ---
 
+
+
+
+
+
+
+🛡️ Digital Signature Demo (sig_demo)
+
+sig_demo.c is a demonstration of Digital Signatures using Post-Quantum Cryptography (PQC) and classical cryptography (RSA-2048 and ECDSA-P256).
+It highlights key generation, signing, verification, key & signature sizes, and execution timings.
+
+🚀 Features
+
+Post-Quantum Cryptography (PQC):
+
+Dilithium2/3/5 & fallback ML-DSA algorithms
+
+Key generation, signing, and verification
+
+Hexadecimal signature output
+
+Timing measurements (ms)
+
+Classical Cryptography:
+
+RSA-2048
+
+ECDSA-P256
+
+SHA-256 hashing for signing
+
+Key & signature sizes displayed
+
+Performance Comparison between PQC and classical signatures
+
+📝 Table of Contents
+
+Overview
+
+Dependencies
+
+Installation
+
+Compilation
+
+Usage
+
+Algorithm Details
+
+Sample Output
+
+Contributing
+
+License
+
+🔍 Overview
+
+This project demonstrates digital signatures by:
+
+Generating public/private key pairs for PQC and classical algorithms
+
+Signing a sample message:
+
+"Post-Quantum Cryptography is the future"
+
+
+Verifying the signature
+
+Measuring execution time for keygen, signing, and verification
+
+Printing key sizes and signature lengths
+
+🧩 Dependencies
+
+GCC compiler
+
+OpenSSL (libssl-dev)
+
+Open Quantum Safe (liboqs)
+
+Ubuntu/Debian Installation:
+
+sudo apt update
+sudo apt install build-essential libssl-dev cmake ninja-build git
+
+
+Build liboqs:
+
+git clone --branch main https://github.com/open-quantum-safe/liboqs.git
+cd liboqs
+mkdir build && cd build
+cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr/local ..
+ninja
+sudo ninja install
+
+⚙️ Compilation
+
+Compile the demo program using:
+
+gcc -O2 -o sig_demo sig_demo.c -I/usr/local/include -L/usr/local/lib -loqs -lcrypto
+
+🏃 Usage
+
+Run the program:
+
+LD_LIBRARY_PATH=/usr/local/lib ./sig_demo
+
+
+The program will:
+
+Select a PQC algorithm (Dilithium2 preferred)
+
+Generate public/private keys
+
+Sign and verify the sample message
+
+Print signature in hexadecimal
+
+Display timings, key sizes, and verification results
+
+🔑 Algorithm Details
+1️⃣ Post-Quantum Signature (PQC)
+
+Algorithms: Dilithium2/3/5, fallback ML-DSA variants
+
+Uses OQS library for signing & verification
+
+Outputs:
+
+Public key length
+
+Secret key length
+
+Signature length
+
+Measures execution time in milliseconds
+
+2️⃣ RSA-2048
+
+Uses OpenSSL RSA functions
+
+Signs SHA-256 hashed message
+
+Key size: ~2048 bits
+
+Signature size: ~256 bytes
+
+3️⃣ ECDSA-P256
+
+Uses OpenSSL EC_KEY
+
+Signs SHA-256 hashed message
+
+Compact public key (~65 bytes)
+
+Signature size: ~64–72 bytes
+
+📊 Sample Output
+=== PQC Signature Demo ===
+Using PQC signature algorithm: Dilithium2
+Public key length: 1312 bytes
+Secret key length: 2528 bytes
+Signature length:  2420 bytes
+
+Message: "Post-Quantum Cryptography is the future"
+Signature (2420 bytes): 12ab34cd... (hex)
+Verification: SUCCESS ✅
+
+Timings (ms):
+  Key generation : 2.345
+  Signing        : 0.456
+  Verification   : 0.123
+
+=== Classical RSA-2048 and ECDSA-P256 Comparison ===
+
+-- RSA-2048 --
+Public key size: ~294 bytes
+Signature size : 256 bytes
+Verification: SUCCESS ✅
+Timings (ms): keygen=45.678, sign=1.234, verify=0.987
+
+-- ECDSA P-256 --
+Public key size: ~65 bytes
+Signature size : 72 bytes
+Verification: SUCCESS ✅
+Timings (ms): keygen=0.456, sign=0.123, verify=0.078
