@@ -112,6 +112,14 @@ The utility supports multiple PQC KEM families and their respective security lev
 
 ---
 
+# 🧩 Compilation
+gcc -o kem_exchange kem_exchange.c -loqs -lcrypto -lssl -lm
+
+# 🚀 Execution (Example: Testing Classic-McEliece)
+./kem_exchange Classic-McEliece-348864
+
+---
+
 ## 🧠 Technical Dependencies
 
 The tool depends on several essential libraries to provide cryptographic robustness, system functionality, and performance optimizations.
