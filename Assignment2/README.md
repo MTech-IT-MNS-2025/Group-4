@@ -367,143 +367,161 @@ Contributions are welcome!
 
 ---
 
-Task - 04: Comparative Study 
+---
 
-🔍 Post-Quantum Cryptography (PQC) vs Classical Cryptography
-🚀 Project Title: PQC vs Classical Cryptography: Comparative Study 🔐
-📖 Overview
+# 🧪 Task - 04: Comparative Study
 
-This project demonstrates a comparative study between Post-Quantum Cryptography (PQC) schemes and classical cryptographic algorithms.
-The goal is to compare:
+## 🔍 Post-Quantum Cryptography (PQC) vs Classical Cryptography
 
-🔑 Key sizes
+---
 
-✍️ Signature / ciphertext sizes
+## 🚀 Project Title: PQC vs Classical Cryptography 🔐
 
-⏱️ Execution times
+---
 
-The study covers:
+This project presents a **comparative study** between **Post-Quantum Cryptography (PQC)** algorithms and **Classical Cryptographic** algorithms using key metrics such as:
 
-Type	Algorithm
-PQC KEM	Kyber512
-PQC Signature	Dilithium2
-Classical SIG	RSA-2048, ECDSA P-256
-🎯 Task 4: Comparative Study Objectives
+- 🔑 **Key sizes**
+- ✍️ **Signature / Ciphertext sizes**
+- ⏱️ **Execution times**
 
-Your program performs:
+---
 
-✅ Measuring key generation, signing/encapsulation, and verification/decapsulation times
+## 📚 Algorithms Compared
 
-📏 Displaying key, signature, and ciphertext sizes
+| 🔐 Category        | ⚙️ Algorithm     |
+|--------------------|------------------|
+| **PQC - KEM**      | Kyber512         |
+| **PQC - Signature**| Dilithium2       |
+| **Classical - SIG**| RSA-2048, ECDSA P-256 |
 
-✔️ Validating correctness of operations (signature verification, shared secret match)
+---
 
-🛠️ Code Description
+## 🎯 Objectives
 
-Uses liboqs for PQC (Kyber512 & Dilithium2)
+This program demonstrates:
 
-Uses OpenSSL for classical cryptography (RSA & ECDSA)
+- ✅ Generation of key pairs for PQC and classical algorithms  
+- 📦 Signing, encapsulation, verification, and decapsulation operations  
+- 📏 Measurement and display of key sizes, signature/ciphertext sizes  
+- ⏱️ Timing for key generation, signing, and verification operations  
+- 🔁 Verifying correctness of cryptographic operations
 
-Program Flow:
+---
 
-Lists enabled PQC KEM & signature algorithms
+## 🛠️ Technologies Used
 
-Runs demo for Kyber512 (PQC KEM)
+- 💻 **Language**: C  
+- 🧪 **Libraries**: 
+  - [liboqs](https://openquantumsafe.org/) – for PQC algorithms  
+  - [OpenSSL](https://www.openssl.org/) – for classical algorithms
 
-Runs demo for Dilithium2 (PQC SIG)
+---
 
-Runs demo for RSA-2048 (classical SIG)
+## 🧰 Requirements
 
-Runs demo for ECDSA P-256 (classical SIG)
+Make sure you have the following installed:
 
-Prints timings, sizes, and verification results for all
+- ✅ `liboqs` (compiled and installed)
+- ✅ `OpenSSL`
+- ✅ `gcc` or `clang` with C99 support
 
-🧰 Requirements
+---
 
-✅ liboqs installed and accessible
+## ⚙️ How to Compile and Run
 
-✅ OpenSSL installed
-
-✅ C compiler supporting C99 or later (e.g. gcc/clang)
-
-⚙️ How to Build & Run
+```bash
+# Basic compilation (if libraries are in standard paths)
 gcc -o pqc_vs_classical pqc_vs_classical.c -loqs -lcrypto
+
+# Run the program
 ./pqc_vs_classical
+````
 
+If you have custom paths:
 
-If using custom include/lib paths:
-
-gcc -I/path/to/liboqs/include -I/usr/include/openssl -L/path/to/liboqs/lib -L/usr/lib -o pqc_vs_classical pqc_vs_classical.c -loqs -lcrypto
+```bash
+gcc -I/path/to/liboqs/include -I/usr/include/openssl \
+    -L/path/to/liboqs/lib -L/usr/lib \
+    -o pqc_vs_classical pqc_vs_classical.c -loqs -lcrypto
 ./pqc_vs_classical
+```
 
-📊 Sample Output
+---
+
+## 📊 Sample Output (Simplified)
+
+```
 === PQC vs Classical Comparative Study ===
 
-Available KEMs (X):
- Kyber512
- ...
-
-Available SIGs (Y):
- Dilithium2
- ...
-
 --- PQC KEM: Kyber512 Demo ---
-KeyGen time: 3.2145 ms
-Encaps time: 1.7842 ms
-Decaps time: 1.7687 ms
+KeyGen time: ~3.21 ms
+Encaps time: ~1.78 ms
+Decaps time: ~1.76 ms
 Public key length: 800 bytes
 Secret key length: 1632 bytes
 Ciphertext length: 736 bytes
 Shared secrets match? YES
 
 --- PQC SIG: Dilithium2 Demo ---
-KeyGen time: 12.4317 ms
-Sign time: 3.1234 ms
+KeyGen time: ~12.43 ms
+Sign time: ~3.12 ms
 Public key length: 1312 bytes
 Secret key length: 2528 bytes
 Signature length: 2420 bytes
 Signature verification: SUCCESS
 
 --- Classical SIG: RSA-2048 Demo ---
-KeyGen time: 345.1234 ms
-Sign time: 2.3421 ms
+KeyGen time: ~345 ms
+Sign time: ~2.34 ms
 Public key approx size: ~294 bytes
 Private key approx size: ~1190 bytes
 Signature length: 256 bytes
 Signature verification: SUCCESS
 
 --- Classical SIG: ECDSA P-256 Demo ---
-KeyGen time: 6.5217 ms
-Sign time: 1.1234 ms
+KeyGen time: ~6.52 ms
+Sign time: ~1.12 ms
 Signature length: 71 bytes
 Signature verification: SUCCESS
+```
 
-🔍 Comparative Summary
-Algorithm	🔑 KeyGen Time (ms)	✍️ Sign/Encaps Time (ms)	✅ Verify/Decaps Time (ms)	📏 Public Key Size	🔒 Secret Key Size	📜 Signature/Ciphertext Size
-Kyber512 (PQC KEM)	~3.0	~1.8	~1.8	800 bytes	1632 bytes	736 bytes
-Dilithium2 (PQC SIG)	~12.4	~3.1	N/A	1312 bytes	2528 bytes	2420 bytes
-RSA-2048 (Classical SIG)	~345.0	~2.3	N/A	~294 bytes	~1190 bytes	256 bytes
-ECDSA P-256 (Classical SIG)	~6.5	~1.1	N/A	N/A	N/A	71 bytes
+---
 
-🧪 Execution time and sizes may vary slightly depending on system performance.
+## 📌 Comparative Summary
 
-📝 Notes
+| Algorithm                  | ⏱️ KeyGen (ms) | ✍️ Sign/Encaps (ms) | ✅ Verify/Decaps (ms) | 📏 Public Key Size | 🔐 Secret Key Size | 📄 Signature/Ciphertext Size |
+| -------------------------- | -------------- | ------------------- | -------------------- | ------------------ | ------------------ | ---------------------------- |
+| **Kyber512 (PQC - KEM)**   | ~3.0           | ~1.8                | ~1.8                 | 800 bytes          | 1632 bytes         | 736 bytes                    |
+| **Dilithium2 (PQC - SIG)** | ~12.4          | ~3.1                | —                    | 1312 bytes         | 2528 bytes         | 2420 bytes                   |
+| **RSA-2048**               | ~345.0         | ~2.3                | —                    | ~294 bytes         | ~1190 bytes        | 256 bytes                    |
+| **ECDSA P-256**            | ~6.5           | ~1.1                | —                    | N/A                | N/A                | 71 bytes                     |
 
-PQC offers stronger future-proof security but comes with larger key/signature sizes
+> 🧠 *Note: Times may vary slightly depending on system hardware and OS.*
 
-RSA is much slower in key generation compared to PQC & ECC
+---
 
-ECDSA provides fast and compact signatures but relies on classical assumptions
+## 📝 Observations
 
-Results support informed decisions for cryptographic system design in the post-quantum era
+* 🧪 PQC algorithms like **Kyber512** and **Dilithium2** offer strong post-quantum security
+* 🐢 **RSA-2048** has the **slowest** key generation time
+* 🧵 **ECDSA** is compact and fast but relies on classical assumptions
+* 🔒 PQC signatures and ciphertexts are **larger**, which may impact bandwidth and storage
+* 🔐 **Key sizes** in PQC are significantly **larger**, but acceptable considering quantum resilience
 
-📚 References
+---
 
-🌐 Open Quantum Safe (liboqs)
+## 📚 References
 
-🔐 OpenSSL
+* 🌐 [Open Quantum Safe Project (liboqs)](https://openquantumsafe.org/)
+* 🔐 [OpenSSL Library](https://www.openssl.org/)
+* 🏛️ [NIST PQC Standardization Project](https://csrc.nist.gov/projects/post-quantum-cryptography)
 
-📄 NIST Post-Quantum Cryptography Project
+
+
+
+
+
 
 
 
