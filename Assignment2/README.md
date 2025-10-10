@@ -56,6 +56,17 @@ The `kem_exchange` utility is a **command-line tool** designed for **testing, be
 It focuses on **Post-Quantum Cryptography (PQC)** algorithms recommended or under evaluation by the **National Institute of Standards and Technology (NIST)**, including the **CRYSTALS-Kyber/ML-KEM** family.
 
 ---
+---
+
+## 📊 System Flowchart
+
+The following flowchart illustrates the **overall workflow** of the `kem_exchange` utility — covering key generation, encapsulation, decapsulation, and shared secret verification processes.
+
+<p align="center">
+  <img src="codetoflow.png" alt="KEM Exchange Utility Flowchart" width="90%">
+</p>
+
+---
 
 ## 🚀 Overview
 
