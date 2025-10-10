@@ -58,185 +58,158 @@ The program (`list_algorithms.c`) lists:
 
 
 
+Absolutely! We can make your README **unique, professional, and visually appealing** by using **tables for features, algorithm details, and sample outputs**. Here’s a fully reorganized version:
 
+---
 
-🛡️ Digital Signature Demo (sig_demo)
+# 🛡️ Digital Signature Demo (`sig_demo`)
 
-sig_demo.c is a demonstration of Digital Signatures using Post-Quantum Cryptography (PQC) and classical cryptography (RSA-2048 and ECDSA-P256).
-It highlights key generation, signing, verification, key & signature sizes, and execution timings.
+`sig_demo.c` demonstrates **Digital Signatures** using **Post-Quantum Cryptography (PQC)** and **classical cryptography** (RSA-2048 and ECDSA-P256).
+It highlights **key generation, signing, verification**, **key & signature sizes**, and **execution timings**.
 
-🚀 Features
+---
 
-Post-Quantum Cryptography (PQC):
+## 🚀 Features
 
-Dilithium2/3/5 & fallback ML-DSA algorithms
+| Type          | Algorithms                        | Features                                                                              |
+| ------------- | --------------------------------- | ------------------------------------------------------------------------------------- |
+| **PQC**       | Dilithium2/3/5, ML-DSA (fallback) | Key generation, signing, verification, Hex signature output, Timing measurements (ms) |
+| **Classical** | RSA-2048                          | SHA-256 signing, Key & signature sizes, Verification                                  |
+| **Classical** | ECDSA-P256                        | SHA-256 signing, Compact key (~65 bytes), Signature size ~64–72 bytes, Verification   |
+| **Other**     | All                               | Performance comparison between PQC and classical signatures                           |
 
-Key generation, signing, and verification
+---
 
-Hexadecimal signature output
+## 📝 Table of Contents
 
-Timing measurements (ms)
+* [Overview](#overview)
+* [Dependencies](#dependencies)
+* [Installation](#installation)
+* [Compilation](#compilation)
+* [Usage](#usage)
+* [Algorithm Details](#algorithm-details)
+* [Sample Output](#sample-output)
+* [Contributing](#contributing)
+* [License](#license)
 
-Classical Cryptography:
+---
 
-RSA-2048
-
-ECDSA-P256
-
-SHA-256 hashing for signing
-
-Key & signature sizes displayed
-
-Performance Comparison between PQC and classical signatures
-
-📝 Table of Contents
-
-Overview
-
-Dependencies
-
-Installation
-
-Compilation
-
-Usage
-
-Algorithm Details
-
-Sample Output
-
-Contributing
-
-License
-
-🔍 Overview
+## 🔍 Overview
 
 This project demonstrates digital signatures by:
 
-Generating public/private key pairs for PQC and classical algorithms
+1. Generating **public/private key pairs** for PQC and classical algorithms
+2. Signing a sample message:
 
-Signing a sample message:
-
+```
 "Post-Quantum Cryptography is the future"
+```
 
+3. Verifying the signature
+4. Measuring execution time for **key generation**, **signing**, and **verification**
+5. Printing **key sizes** and **signature lengths**
 
-Verifying the signature
+---
 
-Measuring execution time for keygen, signing, and verification
+## 🧩 Dependencies
 
-Printing key sizes and signature lengths
+| Dependency                   | Purpose                  |
+| ---------------------------- | ------------------------ |
+| GCC                          | Compiler                 |
+| OpenSSL (`libssl-dev`)       | RSA, ECDSA, SHA-256      |
+| Open Quantum Safe (`liboqs`) | PQC signature algorithms |
 
-🧩 Dependencies
+**Ubuntu/Debian Installation:**
 
-GCC compiler
-
-OpenSSL (libssl-dev)
-
-Open Quantum Safe (liboqs)
-
-Ubuntu/Debian Installation:
-
+```bash
 sudo apt update
 sudo apt install build-essential libssl-dev cmake ninja-build git
+```
 
+**Build liboqs:**
 
-Build liboqs:
-
+```bash
 git clone --branch main https://github.com/open-quantum-safe/liboqs.git
 cd liboqs
 mkdir build && cd build
 cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr/local ..
 ninja
 sudo ninja install
+```
 
-⚙️ Compilation
+---
 
-Compile the demo program using:
+## ⚙️ Compilation
 
+```bash
 gcc -O2 -o sig_demo sig_demo.c -I/usr/local/include -L/usr/local/lib -loqs -lcrypto
+```
 
-🏃 Usage
+---
 
-Run the program:
+## 🏃 Usage
 
+```bash
 LD_LIBRARY_PATH=/usr/local/lib ./sig_demo
+```
 
+Program workflow:
 
-The program will:
+1. Select a PQC algorithm (**Dilithium2 preferred**)
+2. Generate **public/private keys**
+3. Sign and verify the sample message
+4. Print **signature in hexadecimal**
+5. Display **timings**, **key sizes**, and **verification results**
 
-Select a PQC algorithm (Dilithium2 preferred)
+---
 
-Generate public/private keys
+## 🔑 Algorithm Details
 
-Sign and verify the sample message
+| Algorithm            | Key Size                                 | Signature Size | Notes                                                    |
+| -------------------- | ---------------------------------------- | -------------- | -------------------------------------------------------- |
+| **Dilithium2 (PQC)** | 1312 bytes (public), 2528 bytes (secret) | 2420 bytes     | Uses OQS library, PQC security, measured timings in ms   |
+| **RSA-2048**         | ~294 bytes (public)                      | 256 bytes      | Classical, SHA-256 signed, measured timings              |
+| **ECDSA-P256**       | ~65 bytes (public)                       | 64–72 bytes    | Classical, compact key, SHA-256 signed, measured timings |
 
-Print signature in hexadecimal
+---
 
-Display timings, key sizes, and verification results
+## 📊 Sample Output
 
-🔑 Algorithm Details
-1️⃣ Post-Quantum Signature (PQC)
+| Algorithm            | Verification | Key Generation (ms) | Signing (ms) | Verification (ms) | Signature (hex, truncated) |
+| -------------------- | ------------ | ------------------- | ------------ | ----------------- | -------------------------- |
+| **Dilithium2 (PQC)** | ✅ SUCCESS    | 2.345               | 0.456        | 0.123             | `12ab34cd...`              |
+| **RSA-2048**         | ✅ SUCCESS    | 45.678              | 1.234        | 0.987             | `a1b2c3d4...`              |
+| **ECDSA-P256**       | ✅ SUCCESS    | 0.456               | 0.123        | 0.078             | `abcd1234...`              |
 
-Algorithms: Dilithium2/3/5, fallback ML-DSA variants
+---
 
-Uses OQS library for signing & verification
+## 🤝 Contributing
 
-Outputs:
+Contributions are welcome!
 
-Public key length
+1. Fork the repository
+2. Create a branch: `git checkout -b feature-name`
+3. Commit changes: `git commit -am "Add feature"`
+4. Push branch: `git push origin feature-name`
+5. Open a Pull Request
 
-Secret key length
+---
 
-Signature length
+## 📄 License
 
-Measures execution time in milliseconds
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
-2️⃣ RSA-2048
+---
 
-Uses OpenSSL RSA functions
+✅ **Advantages of this version:**
 
-Signs SHA-256 hashed message
+* Tables make **features, algorithm details, and output** visually clear
+* Clickable Table of Contents
+* Easy to read for GitHub viewers
+* Professional and unique layout
 
-Key size: ~2048 bits
+---
 
-Signature size: ~256 bytes
+If you want, I can also **add a workflow diagram** for **KeyGen → Sign → Verify** in Markdown with arrows, which will make it **very visual and GitHub-friendly**.
 
-3️⃣ ECDSA-P256
-
-Uses OpenSSL EC_KEY
-
-Signs SHA-256 hashed message
-
-Compact public key (~65 bytes)
-
-Signature size: ~64–72 bytes
-
-📊 Sample Output
-=== PQC Signature Demo ===
-Using PQC signature algorithm: Dilithium2
-Public key length: 1312 bytes
-Secret key length: 2528 bytes
-Signature length:  2420 bytes
-
-Message: "Post-Quantum Cryptography is the future"
-Signature (2420 bytes): 12ab34cd... (hex)
-Verification: SUCCESS ✅
-
-Timings (ms):
-  Key generation : 2.345
-  Signing        : 0.456
-  Verification   : 0.123
-
-=== Classical RSA-2048 and ECDSA-P256 Comparison ===
-
--- RSA-2048 --
-Public key size: ~294 bytes
-Signature size : 256 bytes
-Verification: SUCCESS ✅
-Timings (ms): keygen=45.678, sign=1.234, verify=0.987
-
--- ECDSA P-256 --
-Public key size: ~65 bytes
-Signature size : 72 bytes
-Verification: SUCCESS ✅
-Timings (ms): keygen=0.456, sign=0.123, verify=0.078
+Do you want me to do that?
