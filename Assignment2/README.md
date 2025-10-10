@@ -33,7 +33,7 @@ This task helps you identify which **KEMs (Key Encapsulation Mechanisms)** and *
 
 ## ⚙️ Features Implemented
 
-The program (`list_algorithms.c`) lists:
+The program (`list_algorithms.c`) lists:_
 
 - All **available KEM algorithms** (e.g., Kyber512, NTRU, BIKE, etc.)
 - All **available Signature algorithms** (e.g., Dilithium, Falcon, SPHINCS+, etc.)
