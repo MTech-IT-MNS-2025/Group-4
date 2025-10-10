@@ -59,7 +59,82 @@ The program (`list_algorithms.c`) lists:_
 | `OQS_SIG_free()` | Frees allocated memory for SIG structure. |
 
 ---
+# 🛠️ Commands & Installation 
+---
+```bash
+sudo apt update && sudo apt upgrade -y
 
+
+###  Install Required Packages 
+Installs build tools (gcc, make), cmake, git, and OpenSSL development libraries (libssl-dev)
+sudo apt install -y build-essential cmake git libssl-dev
+
+---
+
+### Clone liboqs Repository 
+cd ~
+git clone https://github.com/open-quantum-safe/liboqs.git
+cd liboqs
+mkdir build && cd build
+
+---
+
+### Configure and Build liboqs 
+Configure the build and set install prefix to /usr/local
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
+Build the library using all available CPU cores
+make -j$(nproc)
+sudo make install
+
+---
+
+### Verify Installation
+Check for liboqs shared libraries
+ls /usr/local/lib | grep liboqs
+
+Check for liboqs header files
+ls /usr/local/include | grep oqs
+
+---
+
+## Set Library Path 
+# Crucial for the system linker to find the newly installed liboqs shared library at runtime
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+---
+
+## Setup Project Folder
+cd ~
+mkdir -p pqc_project/task1_list_algorithms
+cd pqc_project/task1_list_algorithms
+
+---
+
+## Create C Program (list_algorithms.c)
+Opens the nano editor to paste your C code (from Task 1)
+nano list_algorithms.c
+
+---
+
+## Compile Task 1 Program
+
+## Compile the C program, linking against liboqs (-loqs) and OpenSSL (-lcrypto)
+gcc -O2 -o list_algorithms list_algorithms.c \
+    -I/usr/local/include -L/usr/local/lib -loqs -lcrypto
+
+---
+
+## Run Task 1 Program
+Execute the program and simultaneously pipe the output to both the console and the file 'alg_list.txt'
+./list_algorithms | tee alg_list.txt
+
+---
+
+## Verify Output 
+Display the contents of the output file
+cat alg_list.txt
+
+```
 
 
 # 🧩 Task 2: KEM Exchange Utility (`kem_exchange`)
