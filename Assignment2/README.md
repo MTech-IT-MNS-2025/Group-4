@@ -412,13 +412,8 @@ Contributions are welcome!
 
 # 🧪 Task - 04: Comparative Study
 
-## 🔍 Post-Quantum Cryptography (PQC) vs Classical Cryptography
+## 🔍 Post-Quantum Cryptography (PQC) vs Classical Cryptography 🔐
 
----
-
-## 🚀 Project Title: PQC vs Classical Cryptography 🔐
-
----
 
 This project presents a **comparative study** between **Post-Quantum Cryptography (PQC)** algorithms and **Classical Cryptographic** algorithms using key metrics such as:
 
