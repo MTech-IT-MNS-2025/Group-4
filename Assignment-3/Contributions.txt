@@ -1,0 +1,37 @@
+
+CONTRIBUTIONS
+
+----------
+MNS2025021 (Frontend)
+----------
+ - Developed responsive and interactive UI components including the login page and chat interface with clean design and smooth animations.
+ - Integrated real-time messaging updates using WebSocket connections for instant communication feedback.
+ - Implemented input validation, loading states, and error handling to improve user experience and reliability.
+ - Optimized frontend design for mobile and desktop, ensuring full responsiveness across devices.
+ - Enhanced visual appeal through modern styling, consistent color themes, and intuitive layout design.
+
+----------
+MNS2025016 (Backend)
+----------
+ - Set up and configured the Node.js server, ensuring seamless integration with the Next.js framework.
+ - Implemented real-time communication using Socket.io for private and group messaging.
+ - Developed and managed API endpoints for message history, file uploads, and user status tracking.
+ - Handled environment configurations and error management, improving stability and security.
+ - Added detailed server logs for monitoring, debugging, and maintaining smooth server performance.
+
+----------
+MNS2025019 (Database Management)
+----------
+ - Designed and implemented MongoDB schema with proper data validation to ensure consistency and efficient data organization.
+ - Established and optimized database connection module (lib/mongodb.ts) using connection pooling and caching for reliability.
+ - Developed complete CRUD functionality for message storage and retrieval with clean, reusable query functions.
+ - Enhanced query performance through indexing, pagination, and monitoring, delivering improved database response times.
+
+----------
+MNS2025011 (Additional Features)
+----------
+- Implemented secure and efficient image/file upload functionality.
+- Used Multer for handling multipart/form-data.
+- Integrated Sharp for image processing — resizing, optimizing, and format conversion before saving.
+- Added a dynamic notification component to alert users about actions (e.g., successful upload, errors, updates) using real-time pop-up messages for better user feedback
+- Emoji Integration Enhanced user experience by enabling emoji support in text fields and comments, allowing expressive and interactive communication.
