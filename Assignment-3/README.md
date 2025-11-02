@@ -85,7 +85,7 @@ Task	Status
 | Performance Metric    |    Status   | Description                         |
 | --------------------- | :---------: | ----------------------------------- |
 | ⚡ Connection Speed    | ✅ Optimized | Cached connection with pooling      |
-| 🧩 Query Response     |   ✅ < 50ms  | Indexed queries for fast retrieval  |
+| 🧩 Query Response     |  ✅ < 50ms  | Indexed queries for fast retrieval  |
 | 💾 Data Integrity     |  ✅ Ensured  | Validations and timestamps          |
-| 🔍 Query Optimization |    ✅ Done   | Indexed fields and pagination       |
-| 🧠 Scalability        |   ✅ Ready   | Designed for multi-user concurrency |
+| 🔍 Query Optimization |  ✅ Done   | Indexed fields and pagination       |
+| 🧠 Scalability        |  ✅ Ready   | Designed for multi-user concurrency |
