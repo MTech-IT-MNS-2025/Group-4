@@ -24,16 +24,31 @@ Users can log in, send and receive messages instantly, and retrieve chat history
 
 # 🧭 Project Architecture
 
+---
+## 📂 Project Folder Structure
+This document explains the structure of the **chat-app** project and the purpose of each directory and file.  
+It helps developers quickly understand where to place and find code related to **API routes**, **database connections**, **socket logic**, and **file uploads**.
 
-## Architecture Flow:
+---
 
-Frontend (Next.js pages) → Handles login, chat UI, and message input.
+## 📁 Project Structure Overview
 
-Socket.io Server (Backend) → Manages live WebSocket connections.
+This project follows the **Next.js App Router** structure, with clear separation of concerns.
 
-MongoDB Database → Stores chat history for future retrieval.
+| Path | Description |
+| :--- | :--- |
+| `public/` | Static assets (images, fonts, etc.). Specifically, the **`uploads/`** and **`uploads/profiles/`** folders are used to store user-uploaded files, such as profile pictures. |
+| `src/` | Contains all the main application code. |
+| `src/app/` | Core application pages and layouts (Next.js App Router). |
+| `src/app/api/` | **Backend API Routes**. |
+| `src/app/api/upload/route.ts` | **API endpoint** for handling file uploads (e.g., images, documents, or profile picture updates). |
+| `src/app/api/socket/` | Logic for **WebSocket (Socket.io) server-side setup**, used for real-time communication. |
+| `src/components/` | Reusable **React UI components** (e.g., ChatWindow, MessageInput, UserList). |
+| `src/lib/` | Utility functions, hooks, and constants that are used across the application. |
+| `src/dbConnect.js` | Module responsible for **establishing and managing the database connection** (e.g., MongoDB, PostgreSQL). |
 
-API Routes → Provide REST endpoints for message fetching and management.
+---
+
 
 # 🧱 Technologies Used
 ## Layer	Technology	Purpose
