@@ -47,6 +47,11 @@ This project follows the **Next.js App Router** structure, with clear separation
 | `src/lib/` | Utility functions, hooks, and constants that are used across the application. |
 | `src/dbConnect.js` | Module responsible for **establishing and managing the database connection** (e.g., MongoDB, PostgreSQL). |
 
+
+<p align="center">
+  <img src="img1.jpg" alt="Chat App" width="80%">
+</p>
+
 ---
 
 
@@ -111,6 +116,10 @@ Added server logs for debugging and monitoring performance.
 ✅ Error & Log Management
 
 ✅ Server performance monitoring
+
+<p align="center">
+  <img src="img2.jpg" alt="Chat App" width="80%">
+</p>
 
 # 🎯 Objective
 The goal of this part is to **integrate MongoDB** into the real-time chat application built with **Next.js** and **Socket.io** to enable:
