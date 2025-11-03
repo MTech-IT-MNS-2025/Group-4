@@ -227,9 +227,8 @@ Navigate to: **[http://localhost:3000](http://localhost:3000)**
 
 # 🏗️ Future Enhancements
 
-* ✅ Group chat and message reactions
+* ✅ Message reactions
 * ✅ Message encryption
-* ✅ Push notifications
 * ✅ AI-based chat summaries
 
 ---
@@ -241,8 +240,4 @@ It demonstrates a full-cycle web app architecture covering frontend, backend, da
 
 ---
 
-<p align="center">
-  <b>🚀 Built with ❤️ by the ChatVerse Team</b>
-</p>
 
----
