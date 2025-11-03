@@ -31,7 +31,7 @@ Users can log in, send and receive messages instantly, and retrieve chat history
 # 💻 Screenshot of Chat Interface 
 
 <p align="center">
-  <img src="Login.jpg" alt="ChatVerse Interface" width="80%">
+  <img src="Login.jpeg" alt="ChatVerse Interface" width="80%">
 </p>
 
 ---
