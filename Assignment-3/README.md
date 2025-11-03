@@ -1,3 +1,8 @@
+# 💬 ChatVerse
+
+Connect instantly with anyone, anywhere 🌐
+---
+
 # 📘 Project Overview
 
 This project is a real-time one-to-one private messaging application that allows users to chat seamlessly.
@@ -21,6 +26,15 @@ Users can log in, send and receive messages instantly, and retrieve chat history
 
 ✨ Responsive design for all screen sizes
 
+---
+
+# 💻 Screenshot of Chat Interface 
+
+<p align="center">
+  <img src="Login.jpg" alt="ChatVerse Interface" width="80%">
+</p>
+
+---
 
 # 🧭 Project Architecture
 
