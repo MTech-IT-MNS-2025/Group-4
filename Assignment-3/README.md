@@ -99,7 +99,7 @@ chat-app/
 
 <div align="center">
   <h3>🔐 Login Page</h3>
-  <img src="login-page.jpg" alt="Login Page" width="600"/>
+  <img src="login-page.png" alt="Login Page" width="600"/>
 
   <h3>💬 Private Chat Interface</h3>
   <img src="img1.jpg" alt="Chat Interface" width="600"/>
