@@ -1,0 +1,138 @@
+[
+  {
+    "sender": "alice",
+    "receiver": "bob",
+    "text": "hii",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:18:21.196Z"
+  },
+  {
+    "sender": "alice",
+    "receiver": "bob",
+    "text": "hii",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:18:21.200Z"
+  },
+  {
+    "sender": "bob",
+    "receiver": "alice",
+    "text": "hello bhai",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:18:27.672Z"
+  },
+  {
+    "sender": "bob",
+    "receiver": "alice",
+    "text": "hello bhai",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:18:27.678Z"
+  },
+  {
+    "sender": "bob",
+    "receiver": "alice",
+    "text": "",
+    "imageUrl": "/uploads/1762805925515-133925920.jpg",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:18:45.551Z"
+  },
+  {
+    "sender": "alice",
+    "receiver": "bob",
+    "text": "great man working good all",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:21:21.746Z"
+  },
+  {
+    "sender": "alice",
+    "receiver": "bob",
+    "text": "great man working good all",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:21:21.748Z"
+  },
+  {
+    "sender": "alice",
+    "receiver": "alice",
+    "text": "hii",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:33:34.679Z"
+  },
+  {
+    "sender": "bob",
+    "receiver": "bob",
+    "text": "ansdj",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:34:01.912Z"
+  },
+  {
+    "sender": "bob",
+    "receiver": "alice",
+    "text": "ad",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:34:13.450Z"
+  },
+  {
+    "sender": "bob",
+    "receiver": "alice",
+    "text": "",
+    "imageUrl": "/uploads/1762806874702-773377554.jpg",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:34:34.721Z"
+  },
+  {
+    "sender": "alice",
+    "receiver": "bob",
+    "text": "hii",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:39:06.010Z"
+  },
+  {
+    "sender": "bob",
+    "receiver": "bob",
+    "text": "",
+    "imageUrl": "/uploads/1762807204655-679507370.jpg",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:40:04.662Z"
+  },
+  {
+    "sender": "bob",
+    "receiver": "alice",
+    "text": "fsjndf",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:41:14.223Z"
+  },
+  {
+    "sender": "alice",
+    "receiver": "",
+    "text": "😂",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:44:48.362Z"
+  },
+  {
+    "sender": "alice",
+    "receiver": "bob",
+    "text": "hello",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:45:17.709Z"
+  },
+  {
+    "sender": "alice",
+    "receiver": "bob",
+    "text": "how are you",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:45:22.960Z"
+  },
+  {
+    "sender": "bob",
+    "receiver": "alice",
+    "text": "i am fine",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:45:27.531Z"
+  },
+  {
+    "sender": "bob",
+    "receiver": "alice",
+    "text": "getting good news",
+    "isGroup": false,
+    "timestamp": "2025-11-10T20:46:04.367Z"
+  }
+]

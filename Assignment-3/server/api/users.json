@@ -1,0 +1,12 @@
+[
+  {
+    "username": "alice",
+    "password": "$2b$10$pAk5WxoEZY3Mg8D2Yy/l.uKRIN2h1DEwnTEOGETe1t6OZm5rM1fEa",
+    "profilePicture": ""
+  },
+  {
+    "username": "bob",
+    "password": "$2b$10$qAD7EY80pdDAFoFwEIVaaO.JUBm32yHokB6Bu0rRhrBXgXA1iE0iu",
+    "profilePicture": ""
+  }
+]
