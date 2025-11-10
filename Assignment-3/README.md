@@ -27,7 +27,9 @@ Users can log in, send and receive messages instantly, and retrieve chat history
 
 # 📸 Screenshots
 
-
+<p align="center">
+  <img src="login page.jpg" alt="Login Page" width="80%">
+</p>
 
 <p align="center">
   <img src="img1.jpg" alt="Chat Interface" width="80%">
