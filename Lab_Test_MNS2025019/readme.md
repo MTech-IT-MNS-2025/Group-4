@@ -41,7 +41,4 @@ This project implements a full **Diffie–Hellman Key Exchange** using:
 * Shared secret calculation on both ends
 * CORS-enabled API communication
 * Prime validation on frontend
-
-Everything runs locally using **two terminals** (frontend + backend).
-
 ---
