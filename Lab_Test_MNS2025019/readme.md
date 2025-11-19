@@ -1,66 +1,62 @@
-# Diffie–Hellman Key Exchange (Client–Server Web Application using WebAssembly)
+📘 Diffie–Hellman Key Exchange (Client–Server using WebAssembly)
 
-This project implements the Diffie–Hellman shared secret key generation system using WebAssembly (WASM) for modular exponentiation on both the Client and Server sides.
-The computation uses the original unmodified myProg.c compiled to WebAssembly.
+This project implements the Diffie–Hellman Shared Secret Key Exchange using WebAssembly (WASM) to perform fast modular exponentiation on both the Client and Server sides.
+All exponentiation is computed using the same WASM module compiled from the original myProg.c file.
 
-1. Platform Used
+🚀 Platform Used
 
 Ubuntu (Linux)
 
-2. Software / Tools Used
+🧰 Software / Tools Used
 
 Node.js
 
 Express.js
 
-WebAssembly (WASM) compiled from original myProg.c
+WebAssembly (WASM) (compiled from original myProg.c)
 
-JavaScript (Client-side & Server-side)
+JavaScript (Client + Server)
 
 Fetch API
 
-3. Project Description
-Client-Side
+📄 Project Description
+🔹 Client-Side
 
-User inputs p (prime) and g (generator).
+User inputs p (prime) and g (generator)
 
-Generates random a ∈ Z*_p.
+Browser generates random secret a
 
-Computes x = gᵃ mod p using WASM modexp.
+Computes
+x = gᵃ mod p (via WASM)
 
-Sends <g, p, x> to the server endpoint /compute.
+Sends ⟨g, p, x⟩ to the server
 
-Displays final output <K, y, a>.
+Displays:
 
-Server-Side
+a (client secret)
 
-Receives <g, p, x> from client.
+x
 
-Generates random b ∈ Z*_p.
+b (server secret)
 
-Computes:
-y = gᵇ mod p (using WASM)
+y = gᵇ mod p
 
-K = xᵇ mod p (using WASM)
+K (shared secret)
 
-Returns <K, y> to client in JSON.
+🔹 Server-Side
 
-All exponentiation is performed using the same WebAssembly module, compiled from the original myProg.c.
+Receives ⟨g, p, x⟩ from client
 
-dh_project/
-│
-├── server/
-│   └── server.js
-│
-├── wasm/
-│   ├── myProg.wasm       
-│   └── myProg.js         
-│
-├── public/
-│   ├── index.html         
-│   ├── client.js          
-│   └── wasm-exec.js       
-│
-├── package.json
+Generates random secret b
 
+Computes using WASM:
 
+y = gᵇ mod p
+
+K = xᵇ mod p
+
+Sends ⟨y, K⟩ back to client
+
+📌 Key Point
+
+✔ All modular exponentiation is performed using the same WebAssembly module compiled from the original myProg.c.
