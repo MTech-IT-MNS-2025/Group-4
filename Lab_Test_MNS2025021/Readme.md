@@ -5,8 +5,10 @@ A lightweight demonstration of the **Diffie–Hellman Key Exchange** implemented
 This project shows how native C cryptographic code can run directly inside the browser at high speed using WASM.
 
 
+
 ## 🖥️ Platform Used
 - Windows 10 / 11
+
 
 
 ## 🛠️ Software & Tools Used
@@ -15,6 +17,7 @@ This project shows how native C cryptographic code can run directly inside the b
 - Emscripten
 - WebAssembly
 - HTML / JavaScript
+
 
 
 ## 🔐 Project Summary
@@ -31,6 +34,8 @@ This project computes:
   `K = Y^A mod p = X^B mod p`
 
 Computation is done using a fast C function (`modexp`) compiled to WASM.
+
+
 
 
 ## 📂 Project Folder Structure
