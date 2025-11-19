@@ -18,97 +18,21 @@ These are the **exact tools actually used** in the project:
 * **C Language** – `modexp` implementation compiled into WASM
 ---
 
-## **Commands to Run the Project**
-
-### **1️⃣ Frontend (Runs on Python Server)**
-
-Open Terminal 1 and run:
-
-```bash
-cd ~/diffie-frontend/dist
-python3 -m http.server 8000
+## ▶️ How to Run
 ```
+1️⃣ Install Dependencies
+npm install
 
-Access in browser:
+2️⃣ Start Server
+node server/server.js
 
-```
-http://127.0.0.1:8000
-```
+3️⃣ Open Client
+client/index.html
 
----
-
-### **2️⃣ Backend (Node.js Server)**
-
-Open Terminal 2 and run:
-
-```bash
-cd ~/diffie-frontend/server
-node server.js
-```
-
-Backend runs at:
+🛠 WASM Build Command (Ubuntu)
+emcc myProg.c -Os -s WASM=1 -s EXPORTED_FUNCTIONS='["_modexp"]' -o myProg.js
 
 ```
-http://localhost:3000
-```
-
----
-
-### **3️⃣ Compile C Code to WebAssembly (Using Emscripten)**
-
-From the project root:
-
-```bash
-cd ~/diffie-frontend
-source ~/emsdk/emsdk_env.sh    # LOAD Emscripten (path may vary)
-
-emcc src/myProg.c -O2 \
-  -s WASM=1 \
-  -s MODULARIZE=1 \
-  -s 'EXPORT_NAME="MyModule"' \
-  -s EXPORTED_RUNTIME_METHODS='["cwrap"]' \
-  -s EXPORTED_FUNCTIONS='["_modexp"]' \
-  -s WASM_BIGINT=0 \
-  -o dist/myProg.js
-```
-
-This generates:
-
-* `dist/myProg.js`
-* `dist/myProg.wasm`
-
----
-
-## **Command Used to Calculate the MD5 Digest**
-
-### To compress the folder:
-
-```bash
-zip -r diffie-frontend.zip diffie-frontend
-```
-
-### To generate MD5:
-
-```bash
-md5sum diffie-frontend.zip
-```
-
-Example output:
-
-```
-c42427afea81efb2561a9b855a5bf1  diffie-frontend.zip
-```
-
-### Last four hexadecimal digits (as required):
-
-```
-5bf1
-```
-
----
-
-## ✔ Summary of Functionality
-
 This project implements a full **Diffie–Hellman Key Exchange** using:
 
 * WASM for modular exponentiation (fast + same code on client/server)
