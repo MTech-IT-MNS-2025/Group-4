@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diffie-Hellman Client</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+    <h3>Establish Diffie-Hellman (Client)</h3>
+
+    <label>Enter the Value of p:
+      <input id="p" type="number" />
+    </label>
+
+    <label>Enter the Value of g:
+      <input id="g" type="number" />
+    </label>
+
+    <button id="connect" type="button">CONNECT</button>
+
+    <div id="status" class="status">Not connected</div>
+
+    <div id="results" hidden>
+      <p>Chosen a: <span id="val-a"></span></p>
+      <p>Computed x = g^a mod p: <span id="val-x"></span></p>
+      <p>Server response:</p>
+      <pre id="server-response"></pre>
+    </div>
+  </div>
+
+  <!-- MUST LOAD WASM JS BEFORE main.js -->
+  <script src="myProg.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
