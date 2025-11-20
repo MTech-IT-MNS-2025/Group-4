@@ -1,4 +1,5 @@
 # 📘 WASM Modular Exponentiation UI
+Platform Used: Windows 
 
 A Next.js application demonstrating high-performance cryptographic calculations using WebAssembly (WASM) compiled from C code.
 
