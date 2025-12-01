@@ -235,25 +235,7 @@ chatverse-pqc/
 - AES-GCM provides authenticated encryption
 - Prevents message tampering and replay attacks
 
----
 
-## 🖼️ Screenshots
-
-<div align="center">
-  <h3>🔐 Secure Login with PQC Key Registration</h3>
-  <img src="screenshots/pqc-login.png" alt="PQC Login" width="600"/>
-
-  <h3>💬 Encrypted Chat Interface</h3>
-  <img src="screenshots/encrypted-chat.png" alt="Encrypted Chat" width="600"/>
-
-  <h3>🔑 Key Management Dashboard</h3>
-  <img src="screenshots/key-management.png" alt="Key Management" width="600"/>
-
-  <h3>🖼️ Secure Image Sharing</h3>
-  <img src="screenshots/encrypted-image.png" alt="Encrypted Images" width="600"/>
-</div>
-
----
 
 ## 🎯 Learning Outcomes
 
