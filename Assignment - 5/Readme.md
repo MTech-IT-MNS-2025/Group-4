@@ -1,124 +1,156 @@
 
----
 
-# 🔐 **ChatVerse – Post-Quantum Secure Real-Time Chat Application**
 
-ChatVerse is a **real-time, end-to-end encrypted chat platform** that uses **Post-Quantum Cryptography (PQC)** to secure communication against future quantum attacks.
-It is built using **Next.js, Node.js, Socket.io, MongoDB**, and **Kyber-based PQC encryption**, with an AES-GCM hybrid layer for message protection.
 
-The application supports **private chat, group chat, encrypted image sharing, typing indicators, notifications, and online/offline status** — all secured using quantum-resistant key exchange.
+# 🔐 ChatVerse – Post-Quantum Secure Real-Time Chat Application
 
----
+ChatVerse is a real-time, end-to-end encrypted chat platform that uses **Post-Quantum Cryptography (PQC)** to secure communication against future quantum attacks.
+It is built using **Next.js, Node.js, Socket.io, MongoDB, Kyber768**, and **AES-256-GCM** hybrid encryption.
 
-# 🚀 **Features**
+The application supports:
 
-### 🔐 Post-Quantum Encryption (Kyber768 + AES-256-GCM)
-
-* Each user receives a **Kyber PQC secret key** during registration.
-* Messages use **AES-256-GCM symmetric encryption**.
-* AES keys are encrypted using **Kyber768 KEM** (Hybrid PQC scheme).
-
-### 💬 Real-Time Chat
-
-* Private one-to-one chat
-* Typing indicator
+* Private chat
+* Typing indicators
 * Online/offline status
-* Message read status
 * Notifications
-
-### 📸 Encrypted Media Sharing
-
-* Images are encrypted client-side before upload.
-* Server cannot view image content.
-
-### 🔑 Secure Key Handling
-
-* PQC private keys stored securely on client side.
-* Keys are never sent to the server.
-* AES keys generated per-message → **Forward Secrecy**.
-
-### 🧩 Modern UI
-
-* Responsive interface built using **Tailwind CSS**.
-* Login, Register, Chat, and Secret Key download pages.
+* Encrypted image sharing
+* A modern UI with PQC-based key distribution
 
 ---
 
-# 📦 **Tech Stack**
+# 🖼️ Screenshots
+
+
+### 🚪 Login Page
+
+<img src="./login.jpg" width="700"/>
+
+### 🔐 Registration + Post-Quantum Secret Key Page
+
+<img src="./postquantum.jpg" width="700"/>
+
+### 💬 Real-Time Encrypted Chat (Two Users)
+
+<img src="./chat.jpg" width="700"/>
+
+---
+
+# 🚀 Features
+
+### 🔐 **Post-Quantum Encryption (Kyber768 + AES-256-GCM)**
+
+* Users receive a **Kyber PQC private key** during registration.
+* Messages are encrypted using **AES-256-GCM**.
+* AES session keys are encrypted using **Kyber768 KEM**.
+* Fully quantum-resistant key exchange.
+
+### 💬 **Real-Time Chat**
+
+* One-to-one private chat
+* Online/offline status
+* Typing indicators
+* Instant message delivery
+* Message read/decrypted status
+* New AES key per message (forward secrecy)
+
+### 📸 **Encrypted Image Sharing**
+
+* Images encrypted on client-side **before upload**.
+* Server never sees plaintext images.
+
+### 🔑 **Secure Key Handling**
+
+* PQC private keys stay **only on client side**.
+* Private keys **never** go to the server.
+* AES session keys are generated per message.
+
+### 🧩 **Modern UI**
+
+* Next.js App Router + Tailwind CSS
+* Secret key download page
+* Chat UI with gradient themes
+* Real-time notifications
+
+---
+
+# 📦 Tech Stack
 
 ### **Frontend**
 
-* Next.js 14 (App Router)
+* Next.js 14
 * React
 * Tailwind CSS
-* WebCrypto API (AES-256-GCM)
+* WebCrypto API (AES-GCM)
 
 ### **Backend**
 
 * Node.js
-* Express.js
-* Socket.io (real-time communication)
+* Express
+* Socket.io
 * MongoDB + Mongoose
 
 ### **Cryptography**
 
-* Kyber768 (Post-Quantum KEM)
-* AES-256-GCM (symmetric encryption)
-* Hybrid Encryption = **Kyber KEM + AES-GCM**
-* Native PQC processing via **node-liboqs / native-crypto**
+* **Kyber768** (PQC KEM – Post-Quantum secure)
+* **AES-256-GCM** (authenticated symmetric encryption)
+* **Hybrid Encryption:** Kyber KEM + AES-GCM
+* **native-crypto / node-liboqs** for PQC integration
 
 ---
 
-# 📁 **Project Structure**
-
-*(This matches your folder view from the screenshots)*
+# 📁 Project Structure (according to your folder)
 
 ```
 chat-app/
- ├── app/                # Next.js frontend (UI, pages)
- ├── server/             # Socket.io + Express backend
- ├── lib/                # Crypto utilities (AES-GCM, PQC helpers)
- ├── models/             # MongoDB models (User, Messages)
- ├── native-crypto/      # PQC key generation / bindings
- ├── public/             # Static assets
- ├── launch-chatverse.sh # Optional startup script
- ├── package.json
+ ├── app/                   # Frontend (Next.js pages)
+ ├── server/                # Express + Socket.io backend
+ ├── lib/                   # Crypto utilities (AES, PQC)
+ ├── models/                # MongoDB schemas
+ ├── native-crypto/         # PQC key generation (Kyber768)
+ ├── public/                # Static assets
  ├── next.config.ts
- └── README.md
+ ├── package.json
+ └── README.md              # This file
 ```
 
 ---
 
-# 🛡️ **Security Architecture**
+# 🛡️ Security Architecture
 
-### **1. Registration**
+### **1️⃣ Registration**
 
-* User enters username/password
-* System generates **Kyber PQC key pair**
-* User gets secret key and must store it safely
-* Server stores only the **public key**
-
-### **2. Message Sending**
-
-1. Client generates **fresh AES-256 session key**
-2. Message encrypted using AES-GCM
-3. AES key encapsulated using receiver's **Kyber public key**
-4. Encrypted payload sent over Socket.io
-
-### **3. Message Receiving**
-
-1. Receiver decapsulates AES session key using their **Kyber private key**
-2. Message is decrypted using AES-GCM
-3. UI displays "Decrypted" tag
-
-### **4. Forward Secrecy**
-
-* Every message uses a new AES key
-* One key leak does not expose past messages
+* User creates an account.
+* System generates **Kyber768 key pair**.
+* User receives secret key (must be saved!).
+* Server stores only the **public key**.
 
 ---
 
-# ⚙️ **Installation & Setup**
+### **2️⃣ Sending a Message**
+
+1. Client generates **new AES-256 session key**.
+2. Encrypts message with AES-GCM.
+3. Encapsulates AES key with receiver’s **Kyber public key**.
+4. Sends encrypted payload over Socket.io.
+
+---
+
+### **3️⃣ Receiving a Message**
+
+1. Recipient decapsulates AES key using **Kyber private key**.
+2. Decrypts message using AES-GCM.
+3. UI shows a **Decrypted** badge.
+
+---
+
+### **4️⃣ Forward Secrecy**
+
+* Every message uses a **unique AES key**.
+* Even if one key leaks, past messages remain safe.
+
+---
+
+# ⚙️ Installation
 
 ### **1. Install Dependencies**
 
@@ -140,56 +172,57 @@ npm run dev
 
 ### **4. Open Application**
 
-Visit:
-
 ```
 http://localhost:3000
 ```
 
 ---
 
-# 🧪 **Testing Features**
+# 🧪 Testing Features
 
 You can test:
 
 ✔ Two browsers → private chat
-✔ PQC key loading
-✔ Encrypted messages
+✔ PQC key generation & loading
+✔ Encrypted message exchange
+✔ Decryption badge on UI
+✔ Online/offline status
 ✔ Typing indicator
-✔ Online status
-✔ Encrypted images
+✔ Encrypted image transfer
 
-Your screenshots show full working examples of both users chatting and decrypting messages.
-
----
-
-# 🛡️ **Important Security Notes**
-
-* Your PQC secret key must be saved — **without it, messages cannot be decrypted**.
-* Keys are stored on the client-side (local storage / secure storage).
-* Server **never** sees or stores private keys.
-* AES session keys are never stored.
-* Decryption failures show:
-  `AES decryption failed – possible key mismatch`
+Your screenshots confirm fully working encrypted chat sessions.
 
 ---
 
-# ⭐ **Learning Outcomes**
+# 🛡️ Important Security Notes
+
+* Your **PQC secret key must be saved**.
+  Without it, messages can **never** be decrypted.
+
+* Keys are stored **only on client-side**.
+
+* Server never stores PQC private keys.
+
+* AES session keys are **never persisted**.
+
+* Decryption failure message:
+
+```
+AES decryption failed – possible key mismatch
+```
+
+---
+
+# ⭐ Learning Outcomes
 
 This project demonstrates:
 
-* Real-world implementation of **Post-Quantum Cryptography**
-* Hybrid encryption (PQC + AES)
-* Secure real-time messaging
-* Key lifecycle management
-* Integrating C/PQC libraries with JavaScript
-* Scalable chat architecture using Socket.io
+* Practical implementation of **Post-Quantum Cryptography**
+* Usage of Kyber768 with AES-GCM hybrid encryption
+* Secure real-time messaging architecture
+* Cryptographically safe key lifecycle management
+* Integrating PQC systems with modern full-stack applications
+* Building scalable chat systems using Socket.io
 
 ---
-
-
-
-
----
-
 
